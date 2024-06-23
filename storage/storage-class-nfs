@@ -10,7 +10,8 @@ mkdir /k8sdata
 chown nobody:nogroup /k8sdata
 chmod g+rwxs /k8sdata
 
-echo "/k8sdata *(rw,sync,no_subtree_check)" >> /etc/exports
+echo "/k8sdata *(rw,sync,no_root_squash,no_subtree_check)" >> /etc/exports
+#"no_root_squash" use this only if you want to access the nfs server files/folder as a root user from the nfs client
 exportfs -a
 exportfs -r
 
