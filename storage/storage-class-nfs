@@ -7,7 +7,7 @@ apt install nfs-kernel-server
 #mkdir --mode=777 /k8sdata
 
 mkdir /k8sdata
-chown nobody.nobody /k8sdata
+chown nobody:nogroup /k8sdata
 chmod g+rwxs /k8sdata
 
 echo "/k8sdata *(rw,sync,no_subtree_check)" >> /etc/exports
