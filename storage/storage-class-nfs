@@ -47,7 +47,8 @@ nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
 helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=10.0.0.99 --set nfs.path=/k8sdata --set storageClass.onDelete=true -n storagenfs
 
 kubectl get storageclass
-
+# if you want to set the newly created storage class as defuld then edit the storage class yaml file and include the below line after anotation
+storageclass.kubernetes.io/is-default-class: "true"
 ####
 
 4. create pvc for first application
