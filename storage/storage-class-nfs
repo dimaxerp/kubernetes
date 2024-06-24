@@ -43,6 +43,9 @@ nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
 --set nfs.path=/k8sdata \
 --set storageClass.onDelete=true -n storagenfs
 
+# if installing from windows use below command 
+helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=10.0.0.99 --set nfs.path=/k8sdata --set storageClass.onDelete=true -n storagenfs
+
 kubectl get storageclass
 
 ####
