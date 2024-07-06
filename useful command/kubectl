@@ -1,1 +1,10 @@
+For nodes
+kubectl get node
+
+
+For pods
+kubectl get pods
+kubectl get pods --all-namespaces
+kubectl get pods -n <namespace>
+kubectl logs <pod_name> -n <namespace>
 
